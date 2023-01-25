@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Function, that 
+        //returns either "Rock", "Paper" or "Scissors"
+        //randomly (1 in 3)
+        function getComputerChoice() {
+            let random = Math.floor(Math.random() * 100) + 1;
+            if (random < 33) {
+                console.log("Rock");
+            } else if (random <= 66 && random > 33) {
+                console.log("Paper");
+            } else {
+                console.log("Scissors");
+            }
+            return random;
+        }
+        const computerSelection = getComputerChoice();
+        
+        // If it's paper and scissors, scissors wins
+        // If it's scissors and stone, stone wins
+        // If it's stone and paper, paper wins
+        function playRound(playerSelection, computerSelection) {
+
+        }
+        
+
+    </script>
+    
+</body>
+</html>

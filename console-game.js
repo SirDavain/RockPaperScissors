@@ -1,12 +1,12 @@
-
-// Gameplay
+// This game works in the console
 
 let playerScore = 0;
 let computerScore = 0;
 let roundLimit = 5;
 
 // invoking the function
-//playGame();
+playGame();
+
 
 //Function, that 
 //returns either "Rock", "Paper" or "Scissors"
@@ -27,8 +27,12 @@ function getComputerChoice() {
 }
 
 function getPlayerChoice () {
+    //if (playerScore < roundLimit && computerScore < roundLimit) {
     let ask = prompt("What weapon do you choose? Rock, paper or scissors?").toLowerCase();
     return ask;
+    //} else {
+
+    //}
 }
 
 // If it's paper and scissors, scissors wins
@@ -60,6 +64,14 @@ function playRound() {
     return playerScore, computerScore;
 }
 
+/* function isGameOver(playRound) {
+    console.log("isGameOver start");
+    if (playerScore = roundLimit) console.log("You are the winner of this round.");
+    else if (computerScore = roundLimit) console.log("I have won this round.")
+    else {playRound}
+    console.log("isGameOver end");
+} */ 
+
 function playGame() {
     while (playerScore < roundLimit && computerScore < roundLimit) {
         playRound();
@@ -68,21 +80,11 @@ function playGame() {
     else {
         console.log("I won this round.")
     }
+    /* for (let i = 0; i < roundLimit; i++) {
+        if (playerScore === roundLimit) console.log("You won this round.");
+        else if (computerScore === roundLimit) console.log("I won this round.");
+        else {
+            playRound();
+        }
+    }*/
 }
-
-// UI
-
-const btnRock = document.querySelector("#btnRock");
-btnRock.addEventListener("click", () => {
-    alert("Hello World");
-});
-
-const btnPaper = document.querySelector(#btnPaper);
-btnPaper.addEventListener("click", () => {
-    // invoke "player chose paper" and start game
-});
-
-const btnScissors = document.querySelector(#btnScissors);
-btnScissors.addEventListener("click", () => {
-    // invoke "player chose scissors" and start game
-});

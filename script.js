@@ -7,6 +7,7 @@ let roundLimit = 5;
 
 // invoking the function
 //playGame();
+getPlayerChoiceV2();
 
 //Function, that 
 //returns either "Rock", "Paper" or "Scissors"
@@ -26,33 +27,38 @@ function getComputerChoice() {
     return randomNumber;
 }
 
-function getPlayerChoice () {
+/* function getPlayerChoice () {
     let ask = prompt("What weapon do you choose? Rock, paper or scissors?").toLowerCase();
     return ask;
 }
+*/
 
 // If it's paper and scissors, scissors wins
 // If it's scissors and stone, stone wins
 // If it's stone and paper, paper wins
 
 function playRound() {
-    let playerChoice = getPlayerChoice();
+    let playerChoice = getPlayerChoiceV2();
     let computerChoice = getComputerChoice();
-    if (playerChoice === computerChoice) {
+
+    if (
+        (playerChoice === computerChoice) ||
+        (playerChoice === computerChoice) ||
+        (playerChoice === computerChoice)) {
         console.log("It's a draw. Try again.");
     }
     else if (
-        (playerChoice === "rock" && computerChoice === "scissors") ||
-        (playerChoice === "paper" && computerChoice === "rock") ||
-        (playerChoice === "scissors" && computerChoice === "paper")) {
+        (playerChoice && computerChoice === "scissors") ||
+        (playerChoice && computerChoice === "rock") ||
+        (playerChoice && computerChoice === "paper")) {
             console.log("You won, " +playerChoice+ " beats " +computerChoice+".");
             playerScore++;
             console.log(`Player: ${playerScore}`);
     }
     else if (
-        (playerChoice === "rock" && computerChoice === "paper") ||
-        (playerChoice === "paper" && computerChoice === "scissors") ||
-        (playerChoice === "scissors" && computerChoice === "rock")) {
+        (playerChoice && computerChoice === "paper") ||
+        (playerChoice && computerChoice === "scissors") ||
+        (playerChoice && computerChoice === "rock")) {
             console.log("You lost, " +computerChoice+ " beats " +playerChoice+".");
             computerScore++;
             console.log(`Computer: ${computerScore}`);
@@ -72,17 +78,55 @@ function playGame() {
 
 // UI
 
-const btnRock = document.querySelector("#btnRock");
+// const buttons = document.querySelectorAll(".btn");
+
+/* 
+let btnRock = document.querySelector("#btnRock");
 btnRock.addEventListener("click", () => {
-    alert("Hello World");
+   getPlayerChoice();
 });
 
-const btnPaper = document.querySelector(#btnPaper);
+let btnPaper = document.querySelector("#btnPaper");
 btnPaper.addEventListener("click", () => {
-    // invoke "player chose paper" and start game
+    getPlayerChoice();
 });
 
-const btnScissors = document.querySelector(#btnScissors);
+let btnScissors = document.querySelector("#btnScissors");
 btnScissors.addEventListener("click", () => {
-    // invoke "player chose scissors" and start game
+    getPlayerChoice();
 });
+*/
+
+/* 
+function getPlayerChoice() {
+    buttons.forEach((button) => {button.addEventListener("click", () => {
+        let playerChoice = button.id;
+        if (playerChoice === "rock") {
+            playerChoiceInt = 0;
+        } else if (playerChoice === "paper") {
+            playerChoiceInt = 1;
+        } else if (playerChoice === "scissors") {
+            playerChoiceInt = 2;
+        }
+        compChoiceInt = getComputerChoice;
+        playRound();
+    })});
+}
+*/
+
+function getPlayerChoiceV2() {
+    let rock = document.getElementById("rock");
+        rock = "rock";
+    let paper = document.getElementById("paper");
+        paper = "paper";
+    let scissors = document.getElementById("scissors");
+        scissors = "scissors";
+}
+
+/* If user clicks on button "Rock"
+Computer generates a random choice
+And the choices get compared
+Winner is announced */
+
+/* Add event listener ("click") to the buttons
+and invoke the function to compare and announce the winner */
